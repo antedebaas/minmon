@@ -50,3 +50,9 @@ full = ["docker", "http", "sensors", "smtp", "systemd"]
 strip = true
 lto = true
 panic = "abort"
+
+[package.metadata.generate-rpm]
+assets = [
+    { source = "target/release/minmon", dest = "/usr/bin/minmon", mode = "755" },
+    { source = "systemd.minmon.service", dest = "/etc/systemd/system/minmon.service", mode = "644" },
+]

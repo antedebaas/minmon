@@ -11,5 +11,10 @@ RUN strip -s target/release/minmon
 RUN cargo generate-rpm
 RUN dnf install -y /app/target/generate-rpm/*.rpm
 
+RUN dnf install -y createrepo
+RUN mkdir -p /srv/repository
+RUN createrepo --update /srv/repository
+RUN cp /app/minmon.repo /etc/yum.repos.d/minmon.repo
+
 ENTRYPOINT ["/usr/bin/minmon"]
 CMD ["/etc/minmon.toml"]

@@ -1,0 +1,5 @@
+[minmon]
+name=minmon
+baseurl=file:///srv/repository
+enabled=1
+gpgcheck=0
