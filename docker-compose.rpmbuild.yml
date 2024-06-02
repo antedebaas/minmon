@@ -1,0 +1,6 @@
+services:
+  minmon:
+    image: minmon-buildrpm:latest
+    volumes:
+      - ./minmon.toml:/etc/minmon.toml:ro
+      - ./rpm:/rpm/
