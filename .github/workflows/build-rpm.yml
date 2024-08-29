@@ -9,10 +9,11 @@ jobs:
 
     - name: build RPM package
       id: rpm
-      uses: antedebaas/rpmbuild@v0.1.2
+      uses: antedebaas/rpmbuild@v0.1.3
       with:
         spec_file: "minmon.spec"
         # additional_repos: "['centos-release-scl', 'http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm']"
+        additional_packages: "['cargo']"
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
