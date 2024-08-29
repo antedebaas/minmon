@@ -9,7 +9,7 @@ jobs:
 
     - name: build RPM package
       id: rpm
-      uses: antedebaas/rpmbuild@v0.1.10
+      uses: antedebaas/rpmbuild@v0.1.11
       with:
         spec_file: "minmon.spec"
         # additional_repos: "['centos-release-scl', 'http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm']"
