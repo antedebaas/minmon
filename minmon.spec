@@ -57,8 +57,7 @@ install -m 644 %{_builddir}/%{name}-%{version}/LICENSE-APACHE %{buildroot}%{_doc
 # Create config directory
 install -d %{buildroot}%{_sysconfdir}/%{name}
 # Install example config file
-install -m 644 %{_builddir}/%{name}-%{version}/example-config.toml %{buildroot}%{_sysconfdir}/%{name}/minmon.toml
-
+install -m 644 %{_builddir}/%{name}-%{version}/examples/example-config.toml %{buildroot}%{_sysconfdir}/%{name}/minmon.toml
 
 %files
 %license %{_docdir}/%{name}/LICENSE-MIT
