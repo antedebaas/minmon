@@ -1,5 +1,5 @@
 Name:           minmon
-Version:        0.11.1.3
+Version:        0.12.0
 Release:        1%{?dist}
 Summary:        An opinionated minimal monitoring and alarming tool
 
