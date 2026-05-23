@@ -35,7 +35,7 @@ jobs:
             command: "cross"
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install musl-tools
         run: sudo apt update && sudo apt install -y musl-tools
@@ -61,7 +61,7 @@ jobs:
         run: tar -czvf ${{ matrix.platform.name }}.tar.gz -C target/${{ matrix.platform.target }}/release minmon
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.platform.name }}
           path: ${{ matrix.platform.name }}.tar.gz
@@ -77,10 +77,10 @@ jobs:
 
     steps:
       - name: Download all artifacts
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v8
 
       - name: Attest Build Provenance
-        uses: actions/attest-build-provenance@v3
+        uses: actions/attest-build-provenance@v4
         with:
           subject-path: '*/minmon-*.tar.gz'
 

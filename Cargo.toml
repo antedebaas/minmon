@@ -1,7 +1,7 @@
 [package]
 name = "minmon"
 description = "An opinionated minimal monitoring and alarming tool"
-version = "0.12.0"
+version = "0.13.0"
 authors = ["Florian Wickert <FlorianWickert@gmail.com>"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/flo-at/minmon"
@@ -9,13 +9,13 @@ keywords = ["monitoring", "alarming", "uptime"]
 edition = "2021"
 
 [dependencies]
-toml = "0.9"
+toml = "1.0"
 reqwest = { version = "0.12", optional = true, default-features = false }
-tokio = { version = "1.47", features = ["full"] }
+tokio = { version = "1.50", features = ["full"] }
 libsystemd = { version = "0.7", optional = true }
 systemd-journal-logger = { version = "2.2", optional = true }
 serde = { version = "1.0", features = ["derive"] }
-nix = { version = "0.30", features = ["fs"] }
+nix = { version = "0.31", features = ["fs"] }
 log = { version = "0.4", features = ["std"] }
 env_logger = { version = "0.11", features = ["humantime"], default-features = false }
 async-trait = "0.1"
@@ -23,8 +23,8 @@ text_placeholder = "0.5"
 chrono = { version = "0.4", features = ["std", "clock"], default-features = false }
 lettre = { version = "0.11", features = ["smtp-transport", "builder"], default-features = false, optional = true }
 sensors = { version = "0.2", optional = true }
-rand = "0.9"
-bollard = { version = "0.19", optional = true }
+rand = "0.10"
+bollard = { version = "0.20", optional = true }
 dasp_ring_buffer = "0.11"
 num-bigint = "0.4"
 num-integer = "0.1"
@@ -32,7 +32,7 @@ cron = "0.15"
 regex = "1.12"
 
 [dev-dependencies]
-mockall = "0.13"
+mockall = "0.14"
 
 [features]
 __rustls = ["lettre?/tokio1-rustls-tls", "reqwest?/rustls-tls"]
